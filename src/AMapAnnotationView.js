@@ -7,7 +7,7 @@ import {
   NativeModules,
   Platform,
 } from 'react-native';
-import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
+// import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 
 class AMapAnnotationView extends React.Component {
 
@@ -46,7 +46,7 @@ class AMapAnnotationView extends React.Component {
   render() {
     let image = undefined;
     if (this.props.image) {
-      image = resolveAssetSource(this.props.image) || {};
+      image = this.props.image || {};
       image = image.uri;
     }
     if (Platform.OS === 'ios') {
